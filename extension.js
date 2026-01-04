@@ -20,9 +20,9 @@ function activate(context) {
   // 注册刷新命令
   const refreshCommand = vscode.commands.registerCommand(
     'this-node-v.refreshNodeVersion',
-    () => {
-      vscode.window.showInformationMessage('正在刷新 Node 版本...');
-      updateNodeVersion();
+    async () => {
+      statusBarItem.text = '$(sync~spin) 刷新中...';
+      await updateNodeVersion();
     }
   );
 

@@ -4,8 +4,13 @@
   "description": "在状态栏显示当前工作区的 Node.js 版本",
   "version": "1.0.0",
   "publisher": "lantianzhi",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.75.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lantianz/this-node-v"
   },
   "categories": [
     "Other"
