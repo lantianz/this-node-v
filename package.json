@@ -1,0 +1,33 @@
+{
+  "name": "this-node-v",
+  "displayName": "Node Version Display",
+  "description": "在状态栏显示当前工作区的 Node.js 版本",
+  "version": "1.0.0",
+  "publisher": "lantianzhi",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "this-node-v.refreshNodeVersion",
+        "title": "刷新 Node 版本"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "echo \"No lint configured\"",
+    "pretest": "echo \"No tests configured\"",
+    "test": "echo \"No tests configured\""
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0"
+  }
+}
