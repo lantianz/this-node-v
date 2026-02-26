@@ -2,7 +2,7 @@
   "name": "this-node-v",
   "displayName": "Node Version Display",
   "description": "在状态栏显示当前工作区的 Node.js 版本",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "lantianzhi",
   "icon": "icon.png",
   "engines": {
