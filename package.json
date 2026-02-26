@@ -22,10 +22,15 @@
   "contributes": {
     "commands": [
       {
+        "command": "this-node-v.openPanel",
+        "title": "打开 Node 版本操作面板"
+      },
+      {
         "command": "this-node-v.refreshNodeVersion",
         "title": "刷新 Node 版本"
       }
-    ]
+    ],
+    "menus": {}
   },
   "scripts": {
     "lint": "echo \"No lint configured\"",
