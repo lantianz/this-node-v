@@ -1,3 +1,9 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+.ace-tool/**
+tests/**
+webview/**
+tsconfig.webview.json
+vite.webview.config.mjs
+vitest.config.mjs

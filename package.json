@@ -1,8 +1,8 @@
 {
   "name": "this-node-v",
-  "displayName": "Node Version Display",
-  "description": "在状态栏显示当前工作区的 Node.js 版本",
-  "version": "1.0.1",
+  "displayName": "Volta Workspace Assistant",
+  "description": "在 VS Code 侧边栏可视化管理当前工作区的 Volta / Node 工具链",
+  "version": "1.1.0",
   "publisher": "lantianzhi",
   "icon": "icon.png",
   "engines": {
@@ -15,29 +15,80 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "volta",
+    "node",
+    "toolchain",
+    "workspace",
+    "sidebar"
+  ],
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "onView:this-node-v.sidebar"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
         "command": "this-node-v.openPanel",
-        "title": "打开 Node 版本操作面板"
+        "title": "打开 Volta 工作区面板"
       },
       {
         "command": "this-node-v.refreshNodeVersion",
-        "title": "刷新 Node 版本"
+        "title": "刷新 Volta 工作区状态"
+      },
+      {
+        "command": "this-node-v.focusSidebar",
+        "title": "聚焦 Volta 侧边栏"
       }
     ],
-    "menus": {}
+    "menus": {
+      "view/title": [
+        {
+          "command": "this-node-v.refreshNodeVersion",
+          "when": "view == this-node-v.sidebar",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "this-node-v-volta",
+          "title": "Volta",
+          "icon": "media/volta.svg"
+        }
+      ]
+    },
+    "views": {
+      "this-node-v-volta": [
+        {
+          "id": "this-node-v.sidebar",
+          "type": "webview",
+          "name": "Workspace"
+        }
+      ]
+    }
   },
   "scripts": {
-    "lint": "echo \"No lint configured\"",
-    "pretest": "echo \"No tests configured\"",
-    "test": "echo \"No tests configured\""
+    "build": "npm run build:webview",
+    "build:webview": "vite build --config vite.webview.config.mjs",
+    "vscode:prepublish": "npm run build:webview",
+    "test:host": "node --test tests/host/**/*.test.js",
+    "test:webview": "vitest run --config vitest.config.mjs",
+    "test": "npm run test:host && npm run test:webview"
   },
   "devDependencies": {
-    "@types/vscode": "^1.75.0"
+    "@types/node": "^24.9.1",
+    "@types/vscode": "^1.75.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/compiler-sfc": "^3.5.22",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.1.0",
+    "naive-ui": "^2.43.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.22"
   }
 }

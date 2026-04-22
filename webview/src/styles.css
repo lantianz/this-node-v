@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--vscode-sideBar-background);
+  color: var(--vscode-foreground);
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  font-family: var(--vscode-font-family);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+#app {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.n-card,
+.n-button,
+.n-tag,
+.n-alert,
+.n-base-selection,
+.n-base-selection-label,
+.n-base-select-menu,
+.n-input,
+.n-input__state-border,
+.n-modal,
+.n-tabs-nav-scroll-content {
+  border-radius: 4px !important;
+}
+
+.n-card > .n-card__content,
+.n-card > .n-card__footer {
+  padding: 10px 12px !important;
+}
+
+.n-alert .n-alert-body {
+  padding: 8px 10px !important;
+}
+
+.n-button {
+  min-height: 28px;
+}
+
+.n-tabs .n-tabs-tab {
+  padding-left: 0 !important;
+  padding-right: 12px !important;
+}
+
+.n-base-selection {
+  min-height: 30px !important;
+}
+
+.custom-scrollbar {
+  --bar-width: 6px;
+  --bar-height: 6px;
+  --thumb-color: #8b8b8b;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: var(--bar-width);
+  height: var(--bar-height);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: var(--thumb-color);
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  /* 滚动条里面轨道 */
+  border-radius: 0;
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
